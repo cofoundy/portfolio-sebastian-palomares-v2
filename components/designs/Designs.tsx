@@ -1,0 +1,29 @@
+import React from "react";
+import { designs } from "@/data/content/designs";
+
+const bp = process.env.BASE_PATH || '';
+
+function Designs() {
+  return (
+    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 items-start">
+      {designs.map((item, index) => {
+        return (
+          <div
+            className="w-full"
+            key={index}
+          >
+            <a href={item.link} target="_blank" className="w-full">
+              <img
+                className="w-full h-96 hover:opacity-75 transition-opacity object-cover"
+                src={item.img.startsWith('http') ? item.img : `${bp}${item.img}`}
+                alt={item.label}
+              />
+            </a>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+export default Designs;
