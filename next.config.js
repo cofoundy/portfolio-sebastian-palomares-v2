@@ -1,8 +1,9 @@
-const basePath = '/portfolio-sebastian-palomares-v2';
+const basePath = '';
 
 module.exports = {
+    output: 'export',
     basePath,
-    assetPrefix: `${basePath}/`,
+    assetPrefix: basePath || undefined,
     images: { unoptimized: true },
     swcMinify: true,
     env: {
